@@ -1,5 +1,5 @@
 Ruta::Context.define :main do
-  element :header do 
+  element :header do
     Header
   end
 
