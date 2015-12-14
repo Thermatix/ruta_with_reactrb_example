@@ -1,4 +1,4 @@
-class Hero_Image < Component_Base
+class Hero_Image < React::Component_Base
   def render
     'SOME HERO IMAGE'
   end

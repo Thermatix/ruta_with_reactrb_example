@@ -1,14 +1,21 @@
-class Buttons < Component_Base
+class Buttons < React::Component_Base
+    param selected: :origin
+
   def render
     div do
-      {about: :info_1, get_started: :info_2, overview: :origin}.each do |button_name,value|
+      button_list = {about: :info_1, get_started: :info_2, overview: :origin}.reject { |_,v| v == params[:selected]  }
+      button_list.each do |button_name,value|
         button do
           button_name
-        end.on(:click,&Ruta.navigate_to_ref(:i_switch,value))
+        end.on(:click) do
+          Ruta.navigate_to_ref(:info_view,:i_switch,value)
+        end
       end
       button do
         'Sign Up'
-      end.on(:click,&Ruta.navigate_to_ref(:sign_up))
+      end.on(:click) do
+        Ruta.navigate_to_ref(:info_view,:sign_up)
+      end
     end
   end
 end

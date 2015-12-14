@@ -1,4 +1,4 @@
-class Header < Component_Base
+class Header < React::Component_Base
 
   def render
     div do

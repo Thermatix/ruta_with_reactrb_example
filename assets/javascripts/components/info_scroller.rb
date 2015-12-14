@@ -1,4 +1,4 @@
-class Info_Scroller < Component_Base
+class Info_Scroller < React::Component_Base
   param page: nil
 
   def render

@@ -4,8 +4,11 @@ end
 
 Ruta::Handlers.define_for :info_view do
   handle :scroller do |params,url|
-    puts Info_Scroller.methods.sort
     Info_Scroller.render(page: params[:switch_to])
+  end
+
+  handle :buttons do |params,url|
+    Buttons.render(selected: params[:switch_to])
   end
 end
 
