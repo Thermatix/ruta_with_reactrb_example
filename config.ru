@@ -40,15 +40,8 @@ else
   HEADER
 end
 
-style_frame_work = <<-CSS_FILES
-<link href="http://cdn.muicss.com/mui-0.2.1/css/mui.min.css" rel="stylesheet" type="text/css" />
-<script src="http://cdn.muicss.com/mui-0.2.1/js/mui.min.js"></script>
-CSS_FILES
-# <script src=""></script>
 
-
-get '/' do
-  <<-HTML
+INDEX = <<-HTML
     <!doctype html>
     <html>
       <head>
@@ -59,6 +52,14 @@ get '/' do
       </body>
     </html>
   HTML
+
+get '/' do
+  INDEX
+end
+
+# catch all route that returns the index page
+get /[^\/]/ do
+  INDEX
 end
 
 
